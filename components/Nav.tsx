@@ -13,6 +13,7 @@ import { usePrivy, useWallets } from "@privy-io/react-auth";
 import { Button } from "@/components/ui/button";
 import { XSquare, AlignCenter } from "lucide-react";
 import { getUserByAddress } from "@/lib/queries";
+import NavDropdownMenu from "./NavDropdownMenu";
 
 type Props = {};
 
@@ -122,6 +123,17 @@ const Nav = (props: Props) => {
             )}
           </div>
         </div>
+        {isDropDownVisible && (
+          <div className="rounded-full xl:hidden" onClick={toggleDropdown}>
+            <XSquare className="h-5 w-5 items-center justify-center rounded-full" />
+          </div>
+        )}
+        {!isDropDownVisible && (
+          <div onClick={toggleDropdown} className="flex lg:hidden">
+            <AlignCenter className="h-6 w-6 items-center justify-center rounded-full" />
+          </div>
+        )}
+        {isDropDownVisible && <NavDropdownMenu onClose={closeDropdown} />}
       </div>
     </div>
   );

@@ -37,9 +37,7 @@ const NavDropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
     <div className="w-screen h-screen bg-white px-2 items-center justify-center absolute right-0 xl:hidden">
       <Accordion
         defaultValue="item-1"
-        className="
-            pl-2
-            "
+        className="pl-2"
         type="single"
         collapsible>
         <Link
@@ -63,7 +61,7 @@ const NavDropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
       </Accordion>
 
       <div className="pt-12">
-        <div className="  space-y-4 flex flex-col px-4">
+        <div className="space-y-4 flex flex-col px-4">
           {authenticated && UserInfo !== "User does not exist." ? (
             <Link href={"/dashboard"}>
               <Button
@@ -74,7 +72,7 @@ const NavDropdownMenu: React.FC<DropDownMenuProps> = ({ onClose }) => {
           ) : authenticated && UserInfo == "User does not exist." ? (
             <Link href={"/onboard"}>
               <Button variant={"outline"} className="w-full">
-                Get DID
+                Get Started
               </Button>
             </Link>
           ) : (
