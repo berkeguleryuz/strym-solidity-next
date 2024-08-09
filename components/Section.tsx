@@ -54,10 +54,9 @@ const items = [
 
 const Section = (props: Props) => {
   return (
-    <>
-      <div className="flex flex-col mt-6 items-center justify-center">
-        <div
-          className="text-3xl xl:text-4xl">
+    <div className="space-y-6">
+      <div className="flex flex-col items-center justify-center">
+        <div className="text-3xl xl:text-4xl mt-6">
           Create, share, and manage your digital identity in one place.
         </div>
         <div className="text-orange-500 group flex items-center  hover:cursor-pointer pt-6">
@@ -80,7 +79,7 @@ const Section = (props: Props) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

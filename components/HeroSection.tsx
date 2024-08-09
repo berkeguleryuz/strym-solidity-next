@@ -72,7 +72,7 @@ const HeroSection = (props: Props) => {
   const isSmallScreen = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="w-full h-full space-y-5 items-center flex flex-col">
-      <div className="font-medium 2xl:w-1/3 md:w-2/3 xl:w1/2 lg:px-0 px-8 text-3xl xl:text-4xl flex justify-center xl:font-medium xl:pt-14 text-center pt-6">
+      <div className="font-medium 2xl:w-1/3 md:w-2/3 xl:w1/2 lg:px-0 px-8 text-3xl xl:text-4xl flex justify-center xl:font-medium  text-center">
         <h1>Your ID. Your privacy.</h1>
       </div>
       <p className="text-2xl pt-4 text-center w-2/3 mx-auto"></p>
@@ -102,7 +102,7 @@ const HeroSection = (props: Props) => {
         />
       </div>
       {/* Burayı kesin değiştir */}
-      <div className="w-full items-center">
+      {/* <div className="w-full items-center">
         {isSmallScreen ? (
           <div className="md:grid-cols-1 grid sm:grid-cols-2 place-content-center place-items-center mx-auto space-x-0  xl:space-x-4 items-center justify-center hover:cursor-pointer gap-4 w-full h-full">
             {tabs.map((tab) => (
@@ -174,7 +174,7 @@ const HeroSection = (props: Props) => {
             ))}
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };
