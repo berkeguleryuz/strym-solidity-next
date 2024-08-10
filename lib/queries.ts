@@ -5,9 +5,15 @@ interface parseErrorMsgProps {
 }
 
 function parseErrorMsg({ e }: parseErrorMsgProps) {
-  const json = JSON.parse(JSON.stringify(e));
-  return json?.reason || json?.error?.message;
+  if (!e) {
+      console.error("Hata: Geçersiz hata objesi:", e);
+      return "Bilinmeyen bir hata oluştu.";
+  }
+
+  return e.reason || e.message || e.error?.message || "Bilinmeyen bir hata oluştu.";
 }
+
+
 
 export async function getUsernameByAddress(userAddress: any) {
   try {

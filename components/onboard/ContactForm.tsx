@@ -284,96 +284,73 @@ const ContactForm = (props: Props) => {
   };
 
   return (
-    <div
-      className="flex flex-col md:flex-row items-center md:items-start justify-between 
-    space-y-4 md:space-y-0 md:space-x-10 pt-20 pb-20 px-4 md:px-16">
-      <div>
-        <div className="md:text-4xl text-xl font-medium w-3/3 pb-3">
-          Creating a DID is a breeze with{" "}
+    <div className="flex mt-5 flex-col md:flex-row container gap-8">
+      <div className="items-center flex justify-center">
+        <Form {...form}>
+          <div className="w-full md:w-2/3">
+            {!submitted ? (
+              <form onSubmit={onSubmit} className="space-y-4 w-full">
+                <FormFields
+                  formData={formData}
+                  handleChange={handleChange}
+                  errors={errors}
+                />
+
+                <CustomImageUploader onImagesChange={handleImagesChange} />
+                <SocialMediaInputs
+                  formData={formData}
+                  handleChange={handleChange}
+                  errors={errors}
+                />
+                <FormItem className="items-center justify-center w-full">
+                  <FormLabel className="w-60 text-sm">About you?</FormLabel>
+                  <FormControl>
+                    <textarea
+                      style={{ height: "100px" }}
+                      onChange={(e) => handleChange("info", e.target.value)}
+                      value={formData.info}
+                      className="form-textarea border p-2 border-gray-300 focus:outline-black rounded-md mt-1 block w-full"
+                    />
+                  </FormControl>
+                </FormItem>
+                <div className="flex items-center gap-4">
+                  <Button
+                    type="submit"
+                    className="text-sm font-light"
+                    disabled={loading}>
+                    Submit
+                  </Button>
+                </div>
+              </form>
+            ) : (
+              <div className="text-xl md:text-2xl flex items-centerjustify-center flex-col px-8">
+                <div className="w-80">
+                  <Image
+                    width={300}
+                    height={300}
+                    src="/6.jpg"
+                    alt="logo"
+                    className="mx-auto"
+                  />
+                  <div className="text-gray-500 font-light text-center justify-center mx-auto py-10">
+                    We&apos;ve received your inquiry and will be contacting you
+                    via email shortly.
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </Form>
+      </div>
+
+      <div className="gap-4 flex flex-col md:w-1/2 items-center">
+        <div className="md:text-xl text-xl font-medium w-3/3 pb-3 items-center flex flex-col justify-center">
+          Create your Clodron ID!
           <span className="text-orange-500">Clodron Star User ID</span>
         </div>
         <Toaster />
         <UserProfileDisplay formData={formData} countryCode={countryCode} />
       </div>
-
-      <Form {...form}>
-        <div className="w-full md:w-2/3">
-          {!submitted ? (
-            <form onSubmit={onSubmit} className="space-y-4 w-full">
-              <FormFields
-                formData={formData}
-                handleChange={handleChange}
-                errors={errors}
-              />
-              <FormItem className="items-center justify-center mb-4 w-full">
-                <FormLabel className="text-sm">Select Skills *</FormLabel>
-                <FormControl>
-                  <Select
-                    components={animatedComponents}
-                    isMulti
-                    value={selectedOptions}
-                    onChange={handleSkillChange}
-                    options={options}
-                    className="text-md"
-                    styles={customStyles}
-                    classNamePrefix="react-select"
-                  />
-                </FormControl>
-              </FormItem>
-              <CustomImageUploader onImagesChange={handleImagesChange} />
-              <SocialMediaInputs
-                formData={formData}
-                handleChange={handleChange}
-                errors={errors}
-              />
-              <FormItem className="items-center justify-center w-full">
-                <FormLabel className="w-60 text-sm">About you?</FormLabel>
-                <FormControl>
-                  <textarea
-                    style={{ height: "100px" }}
-                    onChange={(e) => handleChange("info", e.target.value)}
-                    value={formData.info}
-                    className="form-textarea border p-2 border-gray-300 focus:outline-black rounded-md mt-1 block w-full"
-                  />
-                </FormControl>
-              </FormItem>
-              <div className="flex items-center gap-4">
-                <Button
-                  type="submit"
-                  className="text-sm font-light"
-                  disabled={loading}>
-                  Submit
-                </Button>
-              </div>
-            </form>
-          ) : (
-            <div
-              className="
-                text-xl 
-                md:text-2xl 
-                flex 
-                items-center
-                justify-center
-                flex-col
-                px-8
-              ">
-              <div className="w-80">
-                <Image
-                  width={300}
-                  height={300}
-                  src="/6.jpg"
-                  alt="logo"
-                  className="mx-auto"
-                />
-                <div className="text-gray-500 font-light text-center justify-center mx-auto py-10">
-                  We&apos;ve received your inquiry and will be contacting you
-                  via email shortly.
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-      </Form>
     </div>
   );
 };
