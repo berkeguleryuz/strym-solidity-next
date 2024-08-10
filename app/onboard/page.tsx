@@ -1,11 +1,14 @@
-import React from 'react'
+import ContactForm from "@/components/onboard/ContactForm";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const OnboardPage = (props: Props) => {
   return (
-    <div>OnboardPage</div>
-  )
-}
+    <section className="flex min-h-screen flex-col items-center container mt-2">
+      <ContactForm />
+    </section>
+  );
+};
 
-export default OnboardPage
+export default OnboardPage;

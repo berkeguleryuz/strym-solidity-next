@@ -4,6 +4,7 @@ import "./globals.css";
 import { Orbitron } from "next/font/google";
 import Providers from "@/components/Providers";
 import Nav from "@/components/Nav";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Providers>
           <Nav />
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>

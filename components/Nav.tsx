@@ -105,7 +105,7 @@ const Nav = (props: Props) => {
             )}
           </div>
           <div className="flex lg:space-x-2 items-center pr-4">
-            <Link href={"/free"}>
+            <Link href={"/onboard"}>
               <Button
                 variant={"outline"}
                 className="lg:flex items-center hidden border-none text-base">
