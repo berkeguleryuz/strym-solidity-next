@@ -39,7 +39,7 @@ const UserProfileDisplay: React.FC<UserProfileDisplayProps> = ({
             height={250}
           />
           <p className="font-medium text-gray-700 py-2">
-            @{`${formData.username}` || `identiFiDID`}
+            @{`${formData.username}` || `ClodronStarID`}
           </p>
           <p className="text-sm text-gray-700 py-1">
             {formData.info || "We making digital Identity easier..."}
@@ -58,7 +58,7 @@ const UserProfileDisplay: React.FC<UserProfileDisplayProps> = ({
         <div className="flex flex-col w-full ">
           <div className="flex flex-row items-center bg-gray-100 space-x-2 px-3 py-2 rounded-lg">
             <IconMail width={17} height={17} />
-            <p className="text-sm">{formData.email || "identiFi@gmail.com"}</p>
+            <p className="text-sm">{formData.email || "info@clodron.com"}</p>
           </div>
           <div className="flex flex-row items-center bg-gray-100 mt-2 space-x-2 px-3 py-2 rounded-lg">
             <IconPhone width={17} height={17} />

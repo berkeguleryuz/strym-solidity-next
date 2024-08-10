@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="bg-[#ffecd8]">
       <body className={font.className}>
         <Providers>
           <Nav />
