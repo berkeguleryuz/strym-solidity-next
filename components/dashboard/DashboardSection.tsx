@@ -158,7 +158,7 @@ const DashboardSection = () => {
       } catch (error) {
         toast({
           title: "Error",
-          description: "User Doesn't exist",
+          description: "Relogin.",
         });
         console.error("Error fetching country code:", error);
       }
@@ -174,20 +174,15 @@ const DashboardSection = () => {
 
   return (
     <div className="md:items-center items-center flex flex-col w-full">
-      <div className="flex flex-col items-center">
-        <div className="id-card-tag"></div>
-        <div className="id-card-tag-strip"></div>
-        <div className="id-card-hook"></div>
-      </div>
       <Toaster />
       <div className="md:items-center items-center justify-center flex flex-col w-11/12 md:w-7/12 ">
         <div className="flex flex-row items-start ">
-          <div className="border-2 rounded-xl  shadow-lg mb-4 py-3 overflow-hidden w-full bg-gradient-to-tl from-slate-50 to-slate-100">
+          <div className="border-2 rounded-xl mb-4 py-3 overflow-hidden w-full border-slate-600/80 shadow-xl">
             <div className="flex flex-col items-center justify-center pt-4 mx-3">
               <div className="text-center flex flex-col items-center justify-center">
                 <Image
                   className="w-28 h-28 shadow-md object-cover object-center p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-                  src={formData.imageUrl || "/images/avatar.jpeg"}
+                  src={formData?.imageUrl || "/4.jpg"}
                   alt="Bordered avatar"
                   width={250}
                   height={250}

@@ -65,7 +65,7 @@ const Nav = (props: Props) => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link href={"/"} legacyBehavior passHref>
+              <Link href={"/verify"} legacyBehavior passHref>
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   Verify Persona
                 </NavigationMenuLink>

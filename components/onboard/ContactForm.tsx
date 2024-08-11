@@ -124,8 +124,8 @@ const ContactForm = (props: Props) => {
         skills: userInfo?.professionalInfo.skills,
         imageUrl: userInfo?.professionalInfo.imageURL,
       });
-      console.log(userInfo);
-      console.log(username);
+      // console.log(userInfo);
+      // console.log(username);
     };
     getUserInfo();
   }, [wallets]);

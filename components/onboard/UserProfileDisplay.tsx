@@ -33,8 +33,8 @@ const UserProfileDisplay: React.FC<UserProfileDisplayProps> = ({
         <div className="text-center flex flex-col items-center justify-center">
           <Image
             className="w-20 h-20 object-cover object-center p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500"
-            src={formData.imageUrl || "/3.jpg"}
-            alt="Bordered avatar"
+            src={formData?.imageUrl || "/7.jpg"}
+            alt="Avatar"
             width={250}
             height={250}
           />
