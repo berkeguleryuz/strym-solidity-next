@@ -104,14 +104,19 @@ const Nav = (props: Props) => {
               ""
             )}
           </div>
+
           <div className="flex lg:space-x-2 items-center pr-4">
-            <Link href={"/onboard"}>
-              <Button
-                variant={"outline"}
-                className="lg:flex items-center hidden border-none text-base">
-                Get Started
-              </Button>
-            </Link>
+            {authenticated ? (
+              <Link href={"/onboard"}>
+                <Button
+                  variant={"outline"}
+                  className="lg:flex items-center hidden border-none text-base">
+                  Get Started
+                </Button>
+              </Link>
+            ) : (
+              ""
+            )}
             {authenticated ? (
               <Button className="hidden lg:block" onClick={logout}>
                 Disconnect
