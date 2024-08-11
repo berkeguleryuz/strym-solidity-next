@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
+import { usePrivy } from "@privy-io/react-auth";
 import {
   ArrowRight,
   Briefcase,
@@ -12,8 +13,8 @@ import Link from "next/link";
 
 type Props = {};
 
-
 const HeroSection = (props: Props) => {
+  const { ready, authenticated, login, logout } = usePrivy();
   return (
     <div className="w-full h-full space-y-5 items-center flex flex-col">
       <div className="font-medium flex flex-col 2xl:w-1/3 md:w-2/3 xl:w1/2 lg:px-0 px-8 text-3xl xl:text-4xl justify-center xl:font-medium  text-center">
@@ -26,8 +27,8 @@ const HeroSection = (props: Props) => {
         Clodron Star ID
       </span>
       <div className="flex gap-4 items-center justify-center group">
-        <Link href={"/onboard"}>
-          <Button className="py-1">
+        {!authenticated ? (
+          <Button className="py-1" onClick={login}>
             <div className="flex items-center justify-center">
               <h2 className="text-lg">Create Digital ID</h2>
               <div>
@@ -35,7 +36,18 @@ const HeroSection = (props: Props) => {
               </div>
             </div>
           </Button>
-        </Link>
+        ) : (
+          <Link href="/dashboard">
+          <Button className="py-1">
+            <div className="flex items-center justify-center">
+              <h2 className="text-lg">Edit Digital ID</h2>
+              <div>
+                <ArrowRight className="h-4 w-4 ml-2 group-hover:rotate-90 group-hover:transform transition duration-300" />
+              </div>
+            </div>
+          </Button>
+          </Link>
+        )}
       </div>
       <div className="items-center justify-center">
         <Image

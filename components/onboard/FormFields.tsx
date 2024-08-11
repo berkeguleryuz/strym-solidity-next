@@ -9,7 +9,7 @@ interface FormFieldsProps {
 }
 
 const FormFields: React.FC<FormFieldsProps> = ({ formData, handleChange }) => (
-  <>
+  <div>
     <div className="md:flex items-center gap-6">
       <FormItem className="items-center justify-center w-full">
         <FormLabel className="text-sm">First name *</FormLabel>
@@ -126,7 +126,7 @@ const FormFields: React.FC<FormFieldsProps> = ({ formData, handleChange }) => (
         />
       </FormControl>
     </FormItem>
-  </>
+  </div>
 );
 
 export default FormFields;

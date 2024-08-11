@@ -80,7 +80,7 @@ const Nav = (props: Props) => {
         <div className="items-center justify-center flex">
           <div className="flex xl:space-x-4">
             {authenticated && userInfo != "User does not exist" ? (
-              <>
+              <div>
                 <Link
                   href={"/dashboard"}
                   className="lg:flex items-center hidden">
@@ -89,9 +89,9 @@ const Nav = (props: Props) => {
                     |
                   </div>
                 </Link>
-              </>
+              </div>
             ) : authenticated && userInfo == "User does not exist" ? (
-              <>
+              <div>
                 <Link href={"/onboard"} className="lg:flex items-center hidden">
                   <div className="">Get Started</div>
                 </Link>
@@ -99,7 +99,7 @@ const Nav = (props: Props) => {
                 <div className="font-thin lg:flex ml-4 mr-0 items-center hidden">
                   |
                 </div>
-              </>
+              </div>
             ) : (
               ""
             )}

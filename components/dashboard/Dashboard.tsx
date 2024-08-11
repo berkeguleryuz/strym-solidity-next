@@ -48,7 +48,7 @@ const Dashboard = (props: Props) => {
           overflow: "hidden",
         }}
         className="md:flex relative justify-center pt-20 pb-20 px-16">
-        {activeTab && <>{activeTab.component}</>}
+        {activeTab && <div>{activeTab.component}</div>}
       </div>
     </div>
   );

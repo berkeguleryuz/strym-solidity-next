@@ -1,3 +1,4 @@
+"use client";
 import ContactForm from "@/components/onboard/ContactForm";
 import React from "react";
 

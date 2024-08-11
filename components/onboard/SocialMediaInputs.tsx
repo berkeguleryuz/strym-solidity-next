@@ -14,7 +14,7 @@ const SocialMediaInputs: React.FC<SocialMediaInputsProps> = ({
   handleChange,
   errors,
 }) => (
-  <>
+  <div>
     <FormItem className="items-center justify-center w-full">
       <FormLabel className="text-sm">
         {errors?.x && <p className="text-red-500 text-xs mt-1">{errors?.x}</p>}X
@@ -92,7 +92,7 @@ const SocialMediaInputs: React.FC<SocialMediaInputsProps> = ({
         />
       </FormControl>
     </FormItem>
-  </>
+  </div>
 );
 
 export default SocialMediaInputs;
