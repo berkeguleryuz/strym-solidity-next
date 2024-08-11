@@ -3,22 +3,17 @@ import axios from "axios";
 import { useState, useEffect, useCallback } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import Select from "react-select";
-
-import { z } from "zod";
 import { Form, FormControl, FormItem, FormLabel } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 import makeAnimated from "react-select/animated";
 import {
   createUser,
   getUserByAddress,
-  getUserByUsername,
   getUsernameByAddress,
 } from "@/lib/queries";
 import { useWallets } from "@privy-io/react-auth";
 import CustomImageUploader from "../ui/custom-image-uploader";
 import { FormSchema, FormValues } from "@/lib/formSchema";
-import { options } from "@/lib/options";
 import { useToast } from "../ui/use-toast";
 import { Toaster } from "../ui/toaster";
 import UserProfileDisplay from "./UserProfileDisplay";

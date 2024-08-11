@@ -1,13 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-
-import { useRef } from "react";
-
-import { useMediaQuery } from "react-responsive";
-
 import { useState } from "react";
-
 import {
   Form,
   FormControl,

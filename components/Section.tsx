@@ -3,11 +3,9 @@ import {
   ArrowRight,
   CheckCircle,
   Clipboard,
-  House,
   CloudLightning,
   User,
 } from "lucide-react";
-import Image from "next/image";
 
 type Props = {};
 

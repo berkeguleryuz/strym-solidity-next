@@ -6,14 +6,11 @@ interface parseErrorMsgProps {
 
 function parseErrorMsg({ e }: parseErrorMsgProps) {
   if (!e) {
-      console.error("Hata: Geçersiz hata objesi:", e);
-      return "Bilinmeyen bir hata oluştu.";
+    return;
   }
 
-  return e.reason || e.message || e.error?.message || "Bilinmeyen bir hata oluştu.";
+  return e.reason || e.message || e.error?.message || "";
 }
-
-
 
 export async function getUsernameByAddress(userAddress: any) {
   try {

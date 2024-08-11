@@ -1,13 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  PiFacebookLogoFill,
-  PiInstagramLogoFill,
-  PiLinkedinLogoFill,
-  PiTwitterLogoFill,
-  PiYoutubeLogoFill,
-} from "react-icons/pi";
-
 const Footer = () => {
   return (
     <div className=" flex lg:items-center pb-10 flex-col mt-5 mx-auto border-t border-black ">
