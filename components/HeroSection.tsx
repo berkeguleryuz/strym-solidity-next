@@ -26,7 +26,7 @@ const HeroSection = (props: Props) => {
         Clodron Star ID
       </span>
       <div className="flex gap-4 items-center justify-center group">
-        <Link href={"/"}>
+        <Link href={"/onboard"}>
           <Button className="py-1">
             <div className="flex items-center justify-center">
               <h2 className="text-lg">Create Digital ID</h2>
